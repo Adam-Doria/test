@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intégration de la Cartographie des Métiers Jobsong</title>
+    <style>
+        /* 
+        Ces styles sont essentiels pour que l'iframe prenne toute la largeur 
+        et la hauteur disponible de la page parent.
+        */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%; /* Indispensable pour que le body s'étende sur toute la hauteur de la fenêtre */
+            overflow: hidden; /* Empêche les barres de défilement sur la page parent si l'iframe est 100% */
+            display: flex; /* Utilise flexbox pour centrer/gérer l'iframe si besoin, ou juste pour le layout */
+            flex-direction: column; /* Si d'autres éléments sont sur la page */
+        }
+
+        /* Conteneur pour l'iframe (optionnel mais bonne pratique pour le style) */
+        #cartography-iframe-container {
+            flex-grow: 1; /* Prend l'espace restant dans un layout flexbox */
+            width: 100%;
+            height: 100vh; /* Prend 100% de la hauteur du viewport */
+            /* Alternative si vous voulez une hauteur fixe: height: 800px; */
+        }
+
+        /* Style de l'iframe lui-même */
+        iframe {
+            width: 100%; /* Prend toute la largeur de son conteneur */
+            height: 100%; /* Prend toute la hauteur de son conteneur */
+            border: none; /* Supprime la bordure par défaut de l'iframe */
+            display: block; /* Évite les problèmes d'espacement avec les éléments inline */
+        }
+    </style>
+</head>
+<body>
+    <div id="cartography-iframe-container">
+        <iframe
+            src="https://opco-sante-map-885826712543.europe-west1.run.app/"
+            title="Cartographie des métiers et parcours professionnels Jobsong"
+            frameborder="0" 
+            allowfullscreen 
+            
+            sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-top-navigation allow-downloads"
+        ></iframe>
+    </div>
+
+    <!-- Vous pouvez ajouter d'autres contenus HTML ici si nécessaire -->
+</body>
+</html>
